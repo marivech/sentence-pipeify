@@ -1,0 +1,47 @@
+* {
+  font-family: 'Open sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: url('https://i.pinimg.com/474x/a1/57/a9/a157a981b4f13c945a01377db3301aa7--backgrounds-wallpapers-phone-wallpapers.jpg');
+}
+
+button {
+  width: 170px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 30px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: transparent;
+  border: 3px solid #0067f4;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  color: #0067f4;
+}
+button:hover {
+  box-shadow: 0 0 10px 0 #0067f4 inset, 0 0 20px 2px #0067f4;
+  border: 3px solid #0067f4;
+}
+
+main, section {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  flex-direction: column;
+  margin: 0 30px;
+  background: #fff;
+  padding: 10px 30px;
+}
+
+label {
+  margin: 15px;
+}

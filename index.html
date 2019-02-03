@@ -4,20 +4,23 @@
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-        <!-- <link type="text/css" rel="stylesheet" href="css/style.css"> -->
         <link type="text/css" rel="stylesheet" href="css/normalize.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
         <title>Pipeify it!</title>
     </head>
     <body>
-        <div class="pipeify-form">
-          <label class="pipeify-form__label" for="input">Put your text here</label>
-          <textarea class="pipeify-form__input" name="input" id="input" cols="30" rows="10"></textarea>
-          <button class="pipeify-form__btn">Submit</button>
-        </div>
-        <div class="pipeify-result">
-            <textarea name="result" class="pipeify-result__output" id="result" cols="30" rows="10"></textarea>
-            <button class="pipeify-result__copy-btn">Copy result</button>
-        </div>
+        <main>
+            <section class="pipeify-form">
+                <label class="pipeify-form__label" for="input">Put your text here</label>
+                <textarea class="pipeify-form__input" name="input" id="input" cols="30" rows="10"></textarea>
+                <button class="pipeify-form__btn">Submit</button>
+            </section>
+            <section class="pipeify-result">
+                <label class="pipeify-result__label" for="input">Result is here</label>
+                <textarea name="result" class="pipeify-result__output" id="result" cols="30" rows="10"></textarea>
+                <button class="pipeify-result__copy-btn">Copy result</button>
+            </section>
+        </main>
         <script src="app.js"></script>
     </body>
 </html>
