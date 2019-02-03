@@ -11,8 +11,12 @@
     <body>
         <div class="pipeify-form">
           <label class="pipeify-form__label" for="input">Put your text here</label>
-          <input type="text" class="pipeify-form__input" name="input" id="input">
+          <textarea class="pipeify-form__input" name="input" id="input" cols="30" rows="10"></textarea>
           <button class="pipeify-form__btn">Submit</button>
+        </div>
+        <div class="pipeify-result">
+            <textarea name="result" class="pipeify-result__output" id="result" cols="30" rows="10"></textarea>
+            <button class="pipeify-result__copy-btn">Copy result</button>
         </div>
         <script src="app.js"></script>
     </body>
