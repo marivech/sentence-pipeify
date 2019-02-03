@@ -21,30 +21,32 @@ const UIController = (() => {
   };
 })();
 
-// const textProcessController = (() => {
-//   return {
-//   };
-// });
-
-const controller = ((UICtrl) => {
-  const runProcessor = () => {
-    const resultString = processText(UICtrl.getInput());
-    UICtrl.showResult(resultString);
+const textProcessController = (() => {
+  return {
+    processText:(input) => 
+      input
+        .split(' ')
+        .filter(word => word !== '')
+        .map(word => {
+          const punctuation = [',', '.', ':', ';', '!', '?'];
+          // if word contains punctuation
+          if (punctuation.some((elm) => word.indexOf(elm) >= 0)) {
+            return `${word.replace(/(.)$/, '|$1|')}`
+          }
+          return `${word}|`;
+        })
+        .join(' '),
   };
+});
 
-  const processText = (input) => 
-    input
-      .split(' ')
-      .filter(word => word !== '')
-      .map(word => {
-        const punctuation = [',', '.', ':', ';', '!', '?'];
-        // if word contains punctuation
-        if (punctuation.some((elm) => word.indexOf(elm) >= 0)) {
-          return `${word.replace(/(.)$/, '|$1|')}`
-        }
-        return `${word}|`;
-      })
-      .join(' ');
+const controller = ((UICtrl, textProcessCtrl) => {
+  const runProcessor = () => {
+    // get input
+    const resultString = textProcessCtrl.processText(UICtrl.getInput());
+
+    UICtrl.showResult(resultString);
+    UICtrl.copyResult();
+  };
 
   const setupEventListeners = () => {
     DOMElms = UICtrl.getDOMStrings();
@@ -64,12 +66,8 @@ const controller = ((UICtrl) => {
         runProcessor();
       }
     });
-
-    document.querySelector(DOMElms.copyBtn).addEventListener('click', () => {
-      UICtrl.copyResult();
-    })
   };
 
   return setupEventListeners();
 
-})(UIController);
+})(UIController, textProcessController);
