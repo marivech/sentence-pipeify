@@ -14,7 +14,7 @@ const UIController = (() => {
       document.querySelector(DOMStrings.output).value = str;
     },
     copyResult: () => {
-      const resultField = document.querySelector(DOMStrings.output).select();
+      document.querySelector(DOMStrings.output).select();
       document.execCommand('copy');
       console.log('Copied!');
     }
@@ -37,7 +37,7 @@ const textProcessController = (() => {
         })
         .join(' '),
   };
-});
+})();
 
 const controller = ((UICtrl, textProcessCtrl) => {
   const runProcessor = () => {
@@ -65,6 +65,10 @@ const controller = ((UICtrl, textProcessCtrl) => {
         e.preventDefault();
         runProcessor();
       }
+    });
+
+    document.querySelector(DOMElms.copyBtn).addEventListener('click', (e) => {
+        UICtrl.copyResult();
     });
   };
 
