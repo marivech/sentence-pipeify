@@ -1,5 +1,7 @@
 * {
   font-family: 'Open sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 body {
@@ -44,4 +46,9 @@ section {
 
 label {
   margin: 15px;
+}
+
+aside {
+  background: #fff;
+  padding: 10px 30px;
 }
