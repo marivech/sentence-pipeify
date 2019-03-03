@@ -28,14 +28,15 @@ const textProcessController = (() => {
         .split(' ')
         .filter(word => word !== '')
         .map(word => {
-          const punctuation = [',', '.', ':', ';', '!', '?'];
+          const punctuation = [',', '.', ':', ';', '!', '?', '—', '...'];
           // if word contains punctuation
           if (punctuation.some((elm) => word.indexOf(elm) >= 0)) {
             return `${word.replace(/(.)$/, '|$1|')}`
           }
-          return `${word}|`;
+          return `|${word}|`;
         })
-        .join(' '),
+        .join(' ')
+        .slice(1, -1)
   };
 })();
 
